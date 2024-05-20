@@ -1,0 +1,10 @@
+1.SELECT * FROM `obat` WHERE stock_obat <= 3
+2.SELECT * FROM `obat` WHERE stock_obat = 3;
+3.SELECT * FROM `obat` WHERE stock_obat >= 3;
+4.SELECT nama_obat FROM `obat`;
+5.SELECT * FROM `pembeli` WHERE alamat = 'sleman';
+6.SELECT * FROM `pembeli` WHERE alamat = 'bantul';
+7.SELECT nama,alamat FROM `pembeli`;
+8.SELECT COUNT(*) FROM pembeli;
+9.SELECT alamat, COUNT(*) FROM pembeli GROUP BY alamat;
+10.SELECT * FROM pembeli LIMIT 5;
