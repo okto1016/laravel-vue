@@ -1,0 +1,17 @@
+[
+     {
+        "nama" : "Okto",
+        "umur" : 23,
+        "kelas" : "Laravel"
+    },
+    {
+        "nama" : "Todi",
+        "umur" : 24,
+        "kelas" : "Node Js"
+    },
+    {
+        "nama" : "Todo",
+        "umur" : 21,
+        "kelas" : "Javascript"
+    }
+]
