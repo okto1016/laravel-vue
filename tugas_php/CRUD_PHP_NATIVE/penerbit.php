@@ -12,17 +12,16 @@
  
 <body>
 
-<center>
-    <a href="index.php">Buku</a> |
-    <a href="penerbit.php">Penerbit</a> |
-    <a href="pengarang.php">Pengarang</a> |
-    <a href="katalog.php">Katalog</a>
-    <hr>
-</center>
+<nav class="nav nav-tabs justify-content-center">
+  <a class="nav-link" href="index.php">Buku</a>
+  <a class="nav-link" href="penerbit.php">Penerbit</a>
+  <a class="nav-link" href="pengarang.php">Pengarang</a>
+  <a class="nav-link" href="katalog.php">Katalog</a>
+</nav>
 
 <a href="addpenerbit.php">Add New penerbit</a><br/><br/>
  
-    <table class="table" width='80%' border=1>
+    <table class="table table-striped" width='80%' border=1>
  
     <tr>
         <th>Id Penerbit</th> 

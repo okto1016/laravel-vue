@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <div id="app" v-if="status == 'tampilkan'">
+        {{ message }}<br><br>
+        <label v-for="user in users">Nama: {{ user.name }}, Umur: {{ user.age }}</label>
+      </div>
+</body>
+</html>
+
+<script src="https://unpkg.com/vue@3/dist/vue.global.js"></script>
+<script type="text/javascript">
+var app = new Vue({
+  el: '#app',
+  data: {
+    message: 'Hai, ini Vue!',
+    status: 'tampilkan',
+    users: [
+        {
+            name: 'John',
+            age: '21',
+        },
+        {
+            name: 'Jane',
+            age: '22',
+        },
+        {
+            name: 'Joe',
+            age: '23',
+        },
+    ]
+  }
+})
+</script>
