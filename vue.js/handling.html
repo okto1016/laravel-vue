@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <div id="example-1">
+        <button v-on:click="counter += 1">Tambah 1</button>
+        <p>Tombol diatas telah ditekan {{ counter }} kali.</p>
+      </div>
+      <div id="example-2">
+        <!-- `greet` adalah nama metode yang telah didefinisikan di bawah -->
+        <button v-on:click="greet">Greet</button>
+      </div>
+      <div id="example-3">
+        <button v-on:click="say('hi')">Say hi</button>
+        <button v-on:click="say('what')">Say what</button>
+      </div>
+      <button v-on:click="warn('Form cannot be submitted yet.', $event)">
+        Submit
+      </button>
+      <!-- perambatan event klik akan dihentikan -->
+<a v-on:click.stop="doThis"></a>
+
+<!-- event submit tidak lagi memuat ulang halaman -->
+<form v-on:submit.prevent="onSubmit"></form>
+
+<!-- pengubah dapat ditulis berantai -->
+<a v-on:click.stop.prevent="doThat"></a>
+
+<!-- sebuah pengubah -->
+<form v-on:submit.prevent></form>
+
+<!-- gunakan mode capture saat menambahkan event listener -->
+<!-- sebagai contoh, sebuah event menargetkan sebuah inner elemen ditangani disini sebelum ditangani oleh elemen tesebut -->
+<div v-on:click.capture="doThis">...</div>
+
+<!-- handler hanya dipicu jiks event.target adalah elemen itu sendiri -->
+<!-- sebagai contoh, tidak dari elemen anak -->
+<div v-on:click.self="doThat">...</div>
+<!-- click event akan dipicu paling banyak sekali -->
+<a v-on:click.once="doThis"></a>
+<!-- perilaku bawaan event scroll (scrolling) akan terjadi -->
+<!-- segera, dari pada menunggu `onScroll` selesai -->
+<!-- jika memuat `event.preventDefault()` -->
+<div v-on:scroll.passive="onScroll">...</div>
+<!-- hanya memanggil `vm.submit()` saat `key` adalah `Enter` -->
+<input v-on:keyup.enter="submit">
+<input v-on:keyup.page-down="onPageDown">
+<!-- Alt + C -->
+<input @keyup.alt.67="clear">
+
+<!-- Ctrl + Click -->
+<div @click.ctrl="doSomething">Do something</div>
+<!-- baris ini akan mengeksekusi metode bahkan jika tombol Alt atau Shift juga ditekan -->
+<button @click.ctrl="onClick">A</button>
+
+<!-- baris ini hanya akan mengeksekusi metode saat tombol Ctrl ditekan tanpa diikuti tombol lain -->
+<button @click.ctrl.exact="onCtrlClick">A</button>
+
+<!-- baris ini hanya akan mengeksekusi metode saat tidak menekan sistem modifier keys -->
+<button @click.exact="onClick">A</button>
+</body>
+</html>
+<script src="https://cdn.jsdelivr.net/npm/vue@2.6.0/dist/vue.js"></script>
+<script type="text/javascript">
+var example1 = new Vue({
+  el: '#example-1',
+  data: {
+    counter: 0
+  }
+})
+var example2 = new Vue({
+  el: '#example-2',
+  data: {
+    name: 'Vue.js'
+  },
+  // mendefinisikan metode dibawah `methods` object
+  methods: {
+    greet: function (event) {
+      // `this` di dalam metode merujuk ke Vue instance
+      alert('Hello ' + this.name + '!')
+      // `event` adalah bawaan DOM event
+      if (event) {
+        alert(event.target.tagName)
+      }
+    }
+  }
+})
+new Vue({
+  el: '#example-3',
+  methods: {
+    warn: function (message, event) {
+    // sekarang kita memiliki akses ke event bawaan
+    if (event) event.preventDefault()
+    alert(message)
+  },
+    say: function (message) {
+      alert(message)
+    }
+  }
+})
+</script>
