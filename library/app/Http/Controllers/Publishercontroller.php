@@ -12,7 +12,7 @@ class Publishercontroller extends Controller
      */
     public function index()
     {
-        //
+        return view('admin.publisher.index');
     }
 
     /**
@@ -20,7 +20,7 @@ class Publishercontroller extends Controller
      */
     public function create()
     {
-        //
+        return view('admin.publisher.create');
     }
 
     /**
@@ -28,7 +28,7 @@ class Publishercontroller extends Controller
      */
     public function store(Request $request)
     {
-        //
+        return view('admin.publisher.store');
     }
 
     /**
@@ -36,7 +36,7 @@ class Publishercontroller extends Controller
      */
     public function show(Publisher $publisher)
     {
-        //
+        return view('admin.publisher.show');
     }
 
     /**
@@ -44,7 +44,7 @@ class Publishercontroller extends Controller
      */
     public function edit(Publisher $publisher)
     {
-        //
+        return view('admin.publisher.edit');
     }
 
     /**
@@ -52,7 +52,7 @@ class Publishercontroller extends Controller
      */
     public function update(Request $request, Publisher $publisher)
     {
-        //
+        return view('admin.publisher.update');
     }
 
     /**
@@ -60,6 +60,6 @@ class Publishercontroller extends Controller
      */
     public function destroy(Publisher $publisher)
     {
-        //
+        return view('admin.publisher.destroy');
     }
 }

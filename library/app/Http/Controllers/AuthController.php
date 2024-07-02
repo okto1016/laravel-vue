@@ -12,7 +12,7 @@ class AuthController extends Controller
      */
     public function index()
     {
-        //
+        return view('admin.author.index');
     }
 
     /**
@@ -20,7 +20,7 @@ class AuthController extends Controller
      */
     public function create()
     {
-        //
+        return view('admin.author.create');
     }
 
     /**
@@ -28,7 +28,7 @@ class AuthController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        return view('admin.author.store');
     }
 
     /**
@@ -36,7 +36,7 @@ class AuthController extends Controller
      */
     public function show(Author $author)
     {
-        //
+        return view('admin.author.show');
     }
 
     /**
@@ -44,7 +44,7 @@ class AuthController extends Controller
      */
     public function edit(Author $author)
     {
-        //
+        return view('admin.author.edit');
     }
 
     /**
@@ -52,7 +52,7 @@ class AuthController extends Controller
      */
     public function update(Request $request, Author $author)
     {
-        //
+        return view('admin.author.update');
     }
 
     /**
@@ -60,6 +60,6 @@ class AuthController extends Controller
      */
     public function destroy(Author $author)
     {
-        //
+        return view('admin.author.destroy');
     }
 }

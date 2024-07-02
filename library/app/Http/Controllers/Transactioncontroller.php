@@ -12,7 +12,7 @@ class Transactioncontroller extends Controller
      */
     public function index()
     {
-        //
+        return view('admin.transactiondetail.index');
     }
 
     /**
@@ -20,7 +20,7 @@ class Transactioncontroller extends Controller
      */
     public function create()
     {
-        //
+        return view('admin.transactiondetail.create');
     }
 
     /**
@@ -28,7 +28,7 @@ class Transactioncontroller extends Controller
      */
     public function store(Request $request)
     {
-        //
+        return view('admin.transactiondetail.store');
     }
 
     /**
@@ -36,7 +36,7 @@ class Transactioncontroller extends Controller
      */
     public function show(Transaction $transaction)
     {
-        //
+        return view('admin.transactiondetail.show');
     }
 
     /**
@@ -44,7 +44,7 @@ class Transactioncontroller extends Controller
      */
     public function edit(Transaction $transaction)
     {
-        //
+        return view('admin.transactiondetail.edit');
     }
 
     /**
@@ -52,7 +52,7 @@ class Transactioncontroller extends Controller
      */
     public function update(Request $request, Transaction $transaction)
     {
-        //
+        return view('admin.transactiondetail.update');
     }
 
     /**
@@ -60,6 +60,6 @@ class Transactioncontroller extends Controller
      */
     public function destroy(Transaction $transaction)
     {
-        //
+        return view('admin.transactiondetail.destroy');
     }
 }

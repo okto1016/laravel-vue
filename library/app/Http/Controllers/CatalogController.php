@@ -12,7 +12,7 @@ class CatalogController extends Controller
      */
     public function index()
     {
-        //
+        return view('admin.catalog.index');
     }
 
     /**
@@ -20,7 +20,7 @@ class CatalogController extends Controller
      */
     public function create()
     {
-        //
+        return view('admin.catalog.create');
     }
 
     /**
@@ -28,7 +28,7 @@ class CatalogController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        return view('admin.catalog.store');
     }
 
     /**
@@ -36,7 +36,7 @@ class CatalogController extends Controller
      */
     public function show(Catalog $catalog)
     {
-        //
+        return view('admin.catalog.show');
     }
 
     /**
@@ -44,7 +44,7 @@ class CatalogController extends Controller
      */
     public function edit(Catalog $catalog)
     {
-        //
+        return view('admin.catalog.edit');
     }
 
     /**
@@ -52,7 +52,7 @@ class CatalogController extends Controller
      */
     public function update(Request $request, Catalog $catalog)
     {
-        //
+        return view('admin.catalog.update');
     }
 
     /**
@@ -60,6 +60,6 @@ class CatalogController extends Controller
      */
     public function destroy(Catalog $catalog)
     {
-        //
+        return view('admin.catalog.destroy');
     }
 }

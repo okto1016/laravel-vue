@@ -12,7 +12,7 @@ class BookController extends Controller
      */
     public function index()
     {
-        //
+        return view('admin.book.index');
     }
 
     /**
@@ -20,7 +20,7 @@ class BookController extends Controller
      */
     public function create()
     {
-        //
+        return view('admin.book.create');
     }
 
     /**
@@ -28,7 +28,7 @@ class BookController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        return view('admin.book.store');
     }
 
     /**
@@ -36,7 +36,7 @@ class BookController extends Controller
      */
     public function show(Book $book)
     {
-        //
+        return view('admin.book.show');
     }
 
     /**
@@ -44,7 +44,7 @@ class BookController extends Controller
      */
     public function edit(Book $book)
     {
-        //
+        return view('admin.book.edit');
     }
 
     /**
@@ -52,7 +52,7 @@ class BookController extends Controller
      */
     public function update(Request $request, Book $book)
     {
-        //
+        return view('admin.book.update');
     }
 
     /**
@@ -60,6 +60,6 @@ class BookController extends Controller
      */
     public function destroy(Book $book)
     {
-        //
+        return view('admin.book.destroy');
     }
 }

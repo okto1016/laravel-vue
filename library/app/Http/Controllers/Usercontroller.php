@@ -12,7 +12,7 @@ class Usercontroller extends Controller
      */
     public function index()
     {
-        //
+        return view('admin.user.index');
     }
 
     /**
@@ -20,7 +20,7 @@ class Usercontroller extends Controller
      */
     public function create()
     {
-        //
+        return view('admin.user.create');
     }
 
     /**
@@ -28,7 +28,7 @@ class Usercontroller extends Controller
      */
     public function store(Request $request)
     {
-        //
+        return view('admin.user.store');
     }
 
     /**
@@ -36,7 +36,7 @@ class Usercontroller extends Controller
      */
     public function show(User $user)
     {
-        //
+        return view('admin.user.show');
     }
 
     /**
@@ -44,7 +44,7 @@ class Usercontroller extends Controller
      */
     public function edit(User $user)
     {
-        //
+        return view('admin.user.edit');
     }
 
     /**
@@ -52,7 +52,7 @@ class Usercontroller extends Controller
      */
     public function update(Request $request, User $user)
     {
-        //
+        return view('admin.user.update');
     }
 
     /**
@@ -60,6 +60,6 @@ class Usercontroller extends Controller
      */
     public function destroy(User $user)
     {
-        //
+        return view('admin.user.destroy');
     }
 }

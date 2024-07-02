@@ -153,13 +153,68 @@
                         <!-- Add icons to the links using the .nav-icon class
                      with font-awesome or any other icon font library -->
                         <li class="nav-item menu-open">
-                            <a href="#" class="nav-link active">
+                            <a href="{{url ('home')}}" class="nav-link {{request()->is('home') ? 'active' : ''}}">
                                 <i class="nav-icon fas fa-tachometer-alt"></i>
                                 <p>
-                                    Dashboard
+                                    Home
                                 </p>
                             </a>
-
+                        </li>
+                        <li class="nav-item menu-open">
+                            <a href="{{url ('catalog')}}" class="nav-link {{request()->is('catalog') ? 'active' : ''}}">
+                                <i class="nav-icon fas fa-edit"></i>
+                                <p>
+                                    Catalog
+                                </p>
+                            </a>
+                        </li>
+                        <li class="nav-item menu-open">
+                            <a href="{{url ('book')}}" class="nav-link {{request()->is('book') ? 'active' : ''}}">
+                                <i class="nav-icon fa-solid fa-book"></i>
+                                <p>
+                                    Book
+                                </p>
+                            </a>
+                        </li>
+                        <li class="nav-item menu-open">
+                            <a href="{{url ('member')}}" class="nav-link {{request()->is('member') ? 'active' : ''}}">
+                                <i class="nav-icon fa-duotone fa-user"></i>
+                                <p>
+                                    Member
+                                </p>
+                            </a>
+                        </li>
+                        <li class="nav-item menu-open">
+                            <a href="{{url ('publisher')}}" class="nav-link {{request()->is('publisher') ? 'active' : ''}}">
+                                <i class="nav-icon fa-solid fa-bookmark"></i>
+                                <p>
+                                    Publisher
+                                </p>
+                            </a>
+                        </li>
+                        <li class="nav-item menu-open">
+                            <a href="{{url ('transaction')}}" class="nav-link {{request()->is('transaction') ? 'active' : ''}}">
+                                <i class="nav-icon fa-solid fa-shop"></i>
+                                <p>
+                                    Transaction
+                                </p>
+                            </a>
+                        </li>
+                        <li class="nav-item menu-open">
+                            <a href="{{url ('transactiondetail')}}" class="nav-link {{request()->is('transactiondetail') ? 'active' : ''}}">
+                                <i class="nav-icon fa-solid fa-store"></i>
+                                <p>
+                                    Transaction Detail
+                                </p>
+                            </a>
+                        </li>
+                        <li class="nav-item menu-open">
+                            <a href="{{url ('user')}}" class="nav-link {{request()->is('user') ? 'active' : ''}}">
+                                <i class="nav-icon fa-solid fa-user"></i>
+                                <p>
+                                    User
+                                </p>
+                            </a>
                         </li>
                     </ul>
                 </nav>
@@ -175,7 +230,7 @@
                 <div class="container-fluid">
                     <div class="row mb-2">
                         <div class="col-sm-6">
-                            <h1 class="m-0">Dashboard</h1>
+                            <h1 class="m-0">@yield('header')</h1>
                         </div><!-- /.col -->
                     </div><!-- /.row -->
                 </div><!-- /.container-fluid -->

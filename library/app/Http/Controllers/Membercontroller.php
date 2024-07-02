@@ -12,7 +12,7 @@ class Membercontroller extends Controller
      */
     public function index()
     {
-        //
+        return view('admin.member.index');
     }
 
     /**
@@ -20,7 +20,7 @@ class Membercontroller extends Controller
      */
     public function create()
     {
-        //
+        return view('admin.member.create');
     }
 
     /**
@@ -28,7 +28,7 @@ class Membercontroller extends Controller
      */
     public function store(Request $request)
     {
-        //
+        return view('admin.member.store');
     }
 
     /**
@@ -36,7 +36,7 @@ class Membercontroller extends Controller
      */
     public function show(Member $member)
     {
-        //
+        return view('admin.member.show');
     }
 
     /**
@@ -44,7 +44,7 @@ class Membercontroller extends Controller
      */
     public function edit(Member $member)
     {
-        //
+        return view('admin.member.edit');
     }
 
     /**
@@ -52,7 +52,7 @@ class Membercontroller extends Controller
      */
     public function update(Request $request, Member $member)
     {
-        //
+        return view('admin.member.update');
     }
 
     /**
@@ -60,6 +60,6 @@ class Membercontroller extends Controller
      */
     public function destroy(Member $member)
     {
-        //
+        return view('admin.member.destroy');
     }
 }
