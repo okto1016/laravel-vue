@@ -12,6 +12,8 @@ class AuthController extends Controller
      */
     public function index()
     {
+        $author = Author::with('books')->get();
+        return $author;
         return view('admin.author.index');
     }
 

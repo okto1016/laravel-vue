@@ -12,6 +12,8 @@ class TransactionDetailcontroller extends Controller
      */
     public function index()
     {
+     $transaction = TransactionDetail::with('book')->get();
+     return $transaction;
          return view('admin.transaction.index');
     }
 
