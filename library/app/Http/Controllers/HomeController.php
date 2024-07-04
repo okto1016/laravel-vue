@@ -127,9 +127,7 @@ class HomeController extends Controller
         $data20 = Member::select('*')
         ->whereMonth('created_at', '=', '06')
         ->get();    
-        // $data2 = Book::select('*')->join('publishers', 'publishers.id', '=', 'books.publisher_id')->get();
-        // $data3 = Publisher::select('*')->join('books', 'books.publisher_id', '=', 'publishers.id')->get();
-        return $data10;
+        // return $data10;
         return view('home');
     }
 }

@@ -161,7 +161,7 @@
                             </a>
                         </li>
                         <li class="nav-item menu-open">
-                            <a href="{{url ('catalog')}}" class="nav-link {{request()->is('catalog') ? 'active' : ''}}">
+                            <a href="{{url ('catalogs')}}" class="nav-link {{request()->is('catalog') ? 'active' : ''}}">
                                 <i class="nav-icon fas fa-edit"></i>
                                 <p>
                                     Catalog
@@ -169,7 +169,7 @@
                             </a>
                         </li>
                         <li class="nav-item menu-open">
-                            <a href="{{url ('book')}}" class="nav-link {{request()->is('book') ? 'active' : ''}}">
+                            <a href="{{url ('books')}}" class="nav-link {{request()->is('book') ? 'active' : ''}}">
                                 <i class="nav-icon fa-solid fa-book"></i>
                                 <p>
                                     Book
@@ -177,7 +177,7 @@
                             </a>
                         </li>
                         <li class="nav-item menu-open">
-                            <a href="{{url ('member')}}" class="nav-link {{request()->is('member') ? 'active' : ''}}">
+                            <a href="{{url ('members')}}" class="nav-link {{request()->is('member') ? 'active' : ''}}">
                                 <i class="nav-icon fa-duotone fa-user"></i>
                                 <p>
                                     Member
@@ -185,7 +185,7 @@
                             </a>
                         </li>
                         <li class="nav-item menu-open">
-                            <a href="{{url ('publisher')}}" class="nav-link {{request()->is('publisher') ? 'active' : ''}}">
+                            <a href="{{url ('publishers')}}" class="nav-link {{request()->is('publisher') ? 'active' : ''}}">
                                 <i class="nav-icon fa-solid fa-bookmark"></i>
                                 <p>
                                     Publisher
@@ -193,7 +193,7 @@
                             </a>
                         </li>
                         <li class="nav-item menu-open">
-                            <a href="{{url ('transaction')}}" class="nav-link {{request()->is('transaction') ? 'active' : ''}}">
+                            <a href="{{url ('transactions')}}" class="nav-link {{request()->is('transactions') ? 'active' : ''}}">
                                 <i class="nav-icon fa-solid fa-shop"></i>
                                 <p>
                                     Transaction
@@ -201,7 +201,7 @@
                             </a>
                         </li>
                         <li class="nav-item menu-open">
-                            <a href="{{url ('transactiondetail')}}" class="nav-link {{request()->is('transactiondetail') ? 'active' : ''}}">
+                            <a href="{{url ('transactiondetail')}}" class="nav-link {{request()->is('transactiondetails') ? 'active' : ''}}">
                                 <i class="nav-icon fa-solid fa-store"></i>
                                 <p>
                                     Transaction Detail
@@ -209,7 +209,7 @@
                             </a>
                         </li>
                         <li class="nav-item menu-open">
-                            <a href="{{url ('user')}}" class="nav-link {{request()->is('user') ? 'active' : ''}}">
+                            <a href="{{url ('users')}}" class="nav-link {{request()->is('user') ? 'active' : ''}}">
                                 <i class="nav-icon fa-solid fa-user"></i>
                                 <p>
                                     User
