@@ -12,9 +12,9 @@ class AuthController extends Controller
      */
     public function index()
     {
-        $author = Author::with('books')->get();
-        return $author;
-        return view('admin.author.index');
+        $authors = Author::with('books')->get();
+        // return $author;
+        return view('admin.author.index', compact('authors'));
     }
 
     /**
@@ -30,7 +30,14 @@ class AuthController extends Controller
      */
     public function store(Request $request)
     {
-        return view('admin.author.store');
+        $this->validate($request, [
+            'name' => ['required'],
+            'phone_number' => ['required'],
+            'email' => ['required'],
+            'address' => ['required'],
+        ]);
+        Author::create($request->all());
+        return redirect('authors');
     }
 
     /**
@@ -46,7 +53,7 @@ class AuthController extends Controller
      */
     public function edit(Author $author)
     {
-        return view('admin.author.edit');
+        return view('admin.author.edit', compact('author'));
     }
 
     /**
@@ -54,7 +61,14 @@ class AuthController extends Controller
      */
     public function update(Request $request, Author $author)
     {
-        return view('admin.author.update');
+        $this->validate($request, [
+            'name' => ['required'],
+            'phone_number' => ['required'],
+            'email' => ['required'],
+            'address' => ['required'],
+        ]);
+        $author->update($request->all());
+        return redirect('authors');
     }
 
     /**
@@ -62,6 +76,7 @@ class AuthController extends Controller
      */
     public function destroy(Author $author)
     {
-        return view('admin.author.destroy');
+        $author->delete();
+        return redirect('authors');
     }
 }

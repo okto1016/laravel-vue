@@ -12,9 +12,9 @@ class Publishercontroller extends Controller
      */
     public function index()
     {
-        $publisher = Publisher::with('books')->get();
-        return $publisher;
-        return view('admin.publisher.index');
+        $publishers = Publisher::with('books')->get();
+        // return $publisher;
+        return view('admin.publisher.index', compact('publishers'));
     }
 
     /**
@@ -30,7 +30,14 @@ class Publishercontroller extends Controller
      */
     public function store(Request $request)
     {
-        return view('admin.publisher.store');
+        $this->validate($request, [
+            'name' => ['required'],
+            'phone_number' => ['required'],
+            'email' => ['required'],
+            'address' => ['required'],
+        ]);
+        Publisher::create($request->all());
+        return redirect('publishers');
     }
 
     /**
@@ -46,7 +53,7 @@ class Publishercontroller extends Controller
      */
     public function edit(Publisher $publisher)
     {
-        return view('admin.publisher.edit');
+        return view('admin.publisher.edit' , compact('publisher'));
     }
 
     /**
@@ -54,7 +61,14 @@ class Publishercontroller extends Controller
      */
     public function update(Request $request, Publisher $publisher)
     {
-        return view('admin.publisher.update');
+        $this->validate($request, [
+            'name' => ['required'],
+            'phone_number' => ['required'],
+            'email' => ['required'],
+            'address' => ['required'],
+        ]);
+        $publisher->update($request->all());
+        return redirect('publishers');
     }
 
     /**
@@ -62,6 +76,7 @@ class Publishercontroller extends Controller
      */
     public function destroy(Publisher $publisher)
     {
-        return view('admin.publisher.destroy');
+        $publisher->delete();
+        return redirect('publishers');
     }
 }

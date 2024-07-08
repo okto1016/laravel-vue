@@ -4,7 +4,7 @@
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>AdminLTE 3 | Dashboard</title>
+    <title>Library</title>
 
     <!-- Google Font: Source Sans Pro -->
     <link rel="stylesheet"
@@ -162,7 +162,7 @@
                         </li>
                         <li class="nav-item menu-open">
                             <a href="{{url ('catalogs')}}" class="nav-link {{request()->is('catalog') ? 'active' : ''}}">
-                                <i class="nav-icon fas fa-edit"></i>
+                                <i class="nav-icon fas fa-table"></i>
                                 <p>
                                     Catalog
                                 </p>
@@ -170,7 +170,7 @@
                         </li>
                         <li class="nav-item menu-open">
                             <a href="{{url ('books')}}" class="nav-link {{request()->is('book') ? 'active' : ''}}">
-                                <i class="nav-icon fa-solid fa-book"></i>
+                                <i class="nav-icon fa fa-book"></i>
                                 <p>
                                     Book
                                 </p>
@@ -178,7 +178,7 @@
                         </li>
                         <li class="nav-item menu-open">
                             <a href="{{url ('members')}}" class="nav-link {{request()->is('member') ? 'active' : ''}}">
-                                <i class="nav-icon fa-duotone fa-user"></i>
+                                <i class="nav-icon fa fa-user"></i>
                                 <p>
                                     Member
                                 </p>
@@ -186,15 +186,23 @@
                         </li>
                         <li class="nav-item menu-open">
                             <a href="{{url ('publishers')}}" class="nav-link {{request()->is('publisher') ? 'active' : ''}}">
-                                <i class="nav-icon fa-solid fa-bookmark"></i>
+                                <i class="nav-icon fa fa-bookmark"></i>
                                 <p>
                                     Publisher
                                 </p>
                             </a>
                         </li>
                         <li class="nav-item menu-open">
+                            <a href="{{url ('authors')}}" class="nav-link {{request()->is('authors') ? 'active' : ''}}">
+                                <i class="nav-icon fa fa-bookmark"></i>
+                                <p>
+                                    Author
+                                </p>
+                            </a>
+                        </li>
+                        <li class="nav-item menu-open">
                             <a href="{{url ('transactions')}}" class="nav-link {{request()->is('transactions') ? 'active' : ''}}">
-                                <i class="nav-icon fa-solid fa-shop"></i>
+                                <i class="nav-icon fa fa-store"></i>
                                 <p>
                                     Transaction
                                 </p>
@@ -202,7 +210,7 @@
                         </li>
                         <li class="nav-item menu-open">
                             <a href="{{url ('transactiondetail')}}" class="nav-link {{request()->is('transactiondetails') ? 'active' : ''}}">
-                                <i class="nav-icon fa-solid fa-store"></i>
+                                <i class="nav-icon fa fa-store"></i>
                                 <p>
                                     Transaction Detail
                                 </p>
@@ -210,7 +218,7 @@
                         </li>
                         <li class="nav-item menu-open">
                             <a href="{{url ('users')}}" class="nav-link {{request()->is('user') ? 'active' : ''}}">
-                                <i class="nav-icon fa-solid fa-user"></i>
+                                <i class="nav-icon fa fa-user"></i>
                                 <p>
                                     User
                                 </p>

@@ -7,6 +7,7 @@ use Illuminate\Database\Eloquent\Model;
 
 class Catalog extends Model
 {
+    protected $guarded =[''];
     use HasFactory;
     public function books()
     {

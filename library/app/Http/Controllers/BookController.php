@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Models\Book;
+use App\Models\Publisher;
 use Illuminate\Http\Request;
 
 class BookController extends Controller
@@ -13,8 +14,8 @@ class BookController extends Controller
     public function index()
     {
         $books = Book::with('publisher')->get();
-        return $books;
-        return view('admin.book.index');
+        
+        return view('admin.book.index',compact('books'));
     }
 
     /**
@@ -30,7 +31,18 @@ class BookController extends Controller
      */
     public function store(Request $request)
     {
-        return view('admin.book.store');
+        $this->validate($request, [
+            'isbn'=>['required'],
+            'title'=>['required'],
+            'year'=>['required'],
+            'publisher_id'=>['required'],
+            'author_id'=>['required'],
+            'catalog_id'=>['required'],
+            'qty'=>['required'],
+            'price'=>['required'],
+        ]);
+        Book::create($request->all());
+        return redirect('books');
     }
 
     /**
@@ -46,7 +58,7 @@ class BookController extends Controller
      */
     public function edit(Book $book)
     {
-        return view('admin.book.edit');
+        return view('admin.book.edit',compact('book'));
     }
 
     /**
@@ -54,7 +66,18 @@ class BookController extends Controller
      */
     public function update(Request $request, Book $book)
     {
-        return view('admin.book.update');
+        $this->validate($request, [
+            'isbn'=>['required'],
+            'title'=>['required'],
+            'year'=>['required'],
+            'publisher_id'=>['required'],
+            'author_id'=>['required'],
+            'catalog_id'=>['required'],
+            'qty'=>['required'],
+            'price'=>['required'],
+        ]);
+        $book->update($request->all());
+        return redirect('books');
     }
 
     /**
@@ -62,6 +85,7 @@ class BookController extends Controller
      */
     public function destroy(Book $book)
     {
-        return view('admin.book.destroy');
+        $book->delete();
+        return redirect('books');
     }
 }
