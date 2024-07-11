@@ -18,7 +18,7 @@
     <!-- overlayScrollbars -->
     <link rel="stylesheet" href="{{ asset('assets/plugins/overlayScrollbars/css/OverlayScrollbars.min.css') }}">
 </head>
-
+@yield('css')
 <body class="hold-transition sidebar-mini layout-fixed">
     <div class="wrapper">
 
@@ -208,22 +208,6 @@
                                 </p>
                             </a>
                         </li>
-                        <li class="nav-item menu-open">
-                            <a href="{{url ('transactiondetail')}}" class="nav-link {{request()->is('transactiondetails') ? 'active' : ''}}">
-                                <i class="nav-icon fa fa-store"></i>
-                                <p>
-                                    Transaction Detail
-                                </p>
-                            </a>
-                        </li>
-                        <li class="nav-item menu-open">
-                            <a href="{{url ('users')}}" class="nav-link {{request()->is('user') ? 'active' : ''}}">
-                                <i class="nav-icon fa fa-user"></i>
-                                <p>
-                                    User
-                                </p>
-                            </a>
-                        </li>
                     </ul>
                 </nav>
                 <!-- /.sidebar-menu -->
@@ -283,6 +267,9 @@
     <script src="{{ asset('assets/plugins/overlayScrollbars/js/jquery.overlayScrollbars.min.js') }}"></script>
     <!-- AdminLTE App -->
     <script src="{{ asset('assets/dist/js/adminlte.js') }}"></script>
+    <script src="https://cdn.jsdelivr.net/npm/vue@2.6.0/dist/vue.js"></script>
+    <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
+    @yield('js')
 </body>
 
 </html>

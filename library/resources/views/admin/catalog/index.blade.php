@@ -2,7 +2,7 @@
 @section('header', 'Catalog')
 @section('content')
     <div class="row">
-        <div class="col-md-8">
+        <div class="col-md-12">
             <div class="card">
                 <div class="card-header">
                     <a href="{{ url('catalogs/create') }}" class="btn-sm btn-primary pull-right">Create New Catalog</a>
@@ -26,7 +26,7 @@
                                     <td class="text-center">{{ count($catalog->books) }}</td>
                                     <td class="text-center">{{ date('H:i:s - d/m/Y', strtotime($catalog->created_at)) }}
                                     </td>
-                                    <td class="text-center"><a href="{{ url('catalogs/' . $catalog->id . '/edit') }}"
+                                    <td class="text-center row"><a href="{{ url('catalogs/' . $catalog->id . '/edit') }}"
                                             class="btn btn-sm btn-warning">Edit</a>
                                     <form action="{{ url('catalogs', ['id' => $catalog->id]) }}" method="POST">
                                         <input type="submit" class="btn btn-sm btn-danger" value="Delete"

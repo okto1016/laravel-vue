@@ -2,7 +2,7 @@
 @section('header', 'member')
 @section('content')
 <div class="row">
-    <div class="col-md-10">
+    <div class="col-md-12">
         <div class="card">
             <div class="card-header">
                 <a href="{{ url('members/create') }}" class="btn-sm btn-primary pull-right">Create New Member</a>
@@ -32,7 +32,7 @@
                                 <td>{{ $member->address }}</td>                               
                                 <td class="text-center">{{ date('H:i:s - d/m/Y', strtotime($member->created_at)) }}
                                 </td>
-                                <td class="text-center"><a href="{{ url('members/' . $member->id . '/edit') }}"
+                                <td class="text-center row"><a href="{{ url('members/' . $member->id . '/edit') }}"
                                         class="btn btn-sm btn-warning">Edit</a>
                                     <form action="{{ url('members', ['id' => $member->id]) }}" method="POST">
                                         <input type="submit" class="btn btn-sm btn-danger" value="Delete"

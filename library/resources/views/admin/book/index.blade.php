@@ -2,7 +2,7 @@
 @section('header', 'Book')
 @section('content')
     <div class="row">
-        <div class="col-md-10">
+        <div class="col-md-12">
             <div class="card">
                 <div class="card-header">
                     <a href="{{ url('books/create') }}" class="btn-sm btn-primary pull-right">Create New Book</a>
@@ -38,7 +38,7 @@
                                     <td>{{ $book->price }}</td>
                                     <td class="text-center">{{ date('H:i:s - d/m/Y', strtotime($book->created_at)) }}
                                     </td>
-                                    <td class="text-center"><a href="{{ url('books/' . $book->id . '/edit') }}"
+                                    <td class="text-center row"><a href="{{ url('books/' . $book->id . '/edit') }}"
                                             class="btn btn-sm btn-warning">Edit</a>
                                         <form action="{{ url('books', ['id' => $book->id]) }}" method="POST">
                                             <input type="submit" class="btn btn-sm btn-danger" value="Delete"

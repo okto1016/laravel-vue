@@ -7,6 +7,10 @@ use Illuminate\Http\Request;
 
 class Publishercontroller extends Controller
 {
+    public function __construct()
+    {
+        $this->middleware('auth');
+    }
     /**
      * Display a listing of the resource.
      */
@@ -22,7 +26,7 @@ class Publishercontroller extends Controller
      */
     public function create()
     {
-        return view('admin.publisher.create');
+        // return view('admin.publisher.create');
     }
 
     /**
