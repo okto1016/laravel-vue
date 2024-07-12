@@ -161,7 +161,7 @@
                             </a>
                         </li>
                         <li class="nav-item menu-open">
-                            <a href="{{url ('catalogs')}}" class="nav-link {{request()->is('catalog') ? 'active' : ''}}">
+                            <a href="{{url ('catalogs')}}" class="nav-link {{request()->is('catalogs') ? 'active' : ''}}">
                                 <i class="nav-icon fas fa-table"></i>
                                 <p>
                                     Catalog
@@ -169,7 +169,7 @@
                             </a>
                         </li>
                         <li class="nav-item menu-open">
-                            <a href="{{url ('books')}}" class="nav-link {{request()->is('book') ? 'active' : ''}}">
+                            <a href="{{url ('books')}}" class="nav-link {{request()->is('books') ? 'active' : ''}}">
                                 <i class="nav-icon fa fa-book"></i>
                                 <p>
                                     Book
@@ -177,7 +177,7 @@
                             </a>
                         </li>
                         <li class="nav-item menu-open">
-                            <a href="{{url ('members')}}" class="nav-link {{request()->is('member') ? 'active' : ''}}">
+                            <a href="{{url ('members')}}" class="nav-link {{request()->is('members') ? 'active' : ''}}">
                                 <i class="nav-icon fa fa-user"></i>
                                 <p>
                                     Member
@@ -185,7 +185,7 @@
                             </a>
                         </li>
                         <li class="nav-item menu-open">
-                            <a href="{{url ('publishers')}}" class="nav-link {{request()->is('publisher') ? 'active' : ''}}">
+                            <a href="{{url ('publishers')}}" class="nav-link {{request()->is('publishers') ? 'active' : ''}}">
                                 <i class="nav-icon fa fa-bookmark"></i>
                                 <p>
                                     Publisher
