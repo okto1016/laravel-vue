@@ -13,6 +13,7 @@ Route::get('/home', [App\Http\Controllers\HomeController::class, 'index']);
 Route::resource('/catalogs', App\Http\Controllers\CatalogController::class);
 //Book
 Route::resource('/books', App\Http\Controllers\BookController::class);
+Route::get('/api/books', [App\Http\Controllers\BookController::class, 'api']);
 //Author
 Route::resource('/authors', App\Http\Controllers\AuthController::class);
 Route::get('/api/authors', [App\Http\Controllers\AuthController::class, 'api']);
