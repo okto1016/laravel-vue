@@ -16,9 +16,16 @@ class Membercontroller extends Controller
      */
     public function index()
     {
-        $members = Member::with('user')->get();
-        return view('admin.member.index', compact('members'));
+        return view('admin.member.index');
     }
+    
+    public function api()
+    {
+        $members = Member::all();
+        $datatables = datatables()->of($members)->addIndexColumn();
+        return $datatables->make(true);
+    }
+
 
     /**
      * Show the form for creating a new resource.

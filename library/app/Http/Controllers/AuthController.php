@@ -16,9 +16,15 @@ class AuthController extends Controller
      */
     public function index()
     {
-        $authors = Author::with('books')->get();
-        // return $author;
-        return view('admin.author.index', compact('authors'));
+       
+        return view('admin.author.index');
+    }
+
+    public function api()
+    {
+        $authors = Author::all();
+        $datatables = datatables()->of($authors)->addIndexColumn();
+        return $datatables->make(true);
     }
 
     /**

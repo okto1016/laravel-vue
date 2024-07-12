@@ -15,10 +15,13 @@ Route::resource('/catalogs', App\Http\Controllers\CatalogController::class);
 Route::resource('/books', App\Http\Controllers\BookController::class);
 //Author
 Route::resource('/authors', App\Http\Controllers\AuthController::class);
+Route::get('/api/authors', [App\Http\Controllers\AuthController::class, 'api']);
 //Member
 Route::resource('/members', App\Http\Controllers\Membercontroller::class);
+Route::get('/api/members', [App\Http\Controllers\Membercontroller::class, 'api']);
 //Publihser
 Route::resource('/publishers', App\Http\Controllers\Publishercontroller::class);
+Route::get('/api/publishers', [App\Http\Controllers\Publishercontroller::class, 'api']);
 //Transaction
 Route::resource('/transactions', App\Http\Controllers\Transactioncontroller::class);
 //Transaction
