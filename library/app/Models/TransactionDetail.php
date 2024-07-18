@@ -7,13 +7,15 @@ use Illuminate\Database\Eloquent\Model;
 
 class TransactionDetail extends Model
 {
+    protected $guarded = [''];
     use HasFactory;
-    public function book()
-    {
-        return $this->belongsTo('App\Models\Book', 'book_id');
-    }
     public function transaction()
     {
-        return $this->belongsTo('App\Models\Transaction', 'transaction_id');
+        return $this->belongsTo(Transaction::class);
+    }
+
+    public function book()
+    {
+        return $this->belongsTo(Book::class);
     }
 }

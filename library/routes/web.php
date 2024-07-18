@@ -25,6 +25,7 @@ Route::resource('/publishers', App\Http\Controllers\Publishercontroller::class);
 Route::get('/api/publishers', [App\Http\Controllers\Publishercontroller::class, 'api']);
 //Transaction
 Route::resource('/transactions', App\Http\Controllers\Transactioncontroller::class);
+Route::get('/api/transactions', [App\Http\Controllers\Transactioncontroller::class, 'api']);
 //Transaction
 Route::resource('/transactiondetails', App\Http\Controllers\TransactionDetailcontroller::class);
 //Transaction

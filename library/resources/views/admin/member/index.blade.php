@@ -12,9 +12,19 @@
         <div class="row">
             <div class="col-md-12">
                 <div class="card">
-                    <div class="card-header">
-                        <a href="#" @click="addData()" data-target="#modal-default" data-toggle="modal"
-                            class="btn-sm btn-primary pull-right">Create New Member</a>
+                    <div class="card-header row">
+                        <div class="col-md-10">
+                            
+                            <a href="#" @click="addData()" data-target="#modal-default" data-toggle="modal"
+                                class="btn-sm btn-primary pull-right">Create New Member</a>
+                        </div>
+                        <div class="col-md-2">
+                            <select name="gender" class="form-control" >
+                                <option value="0">Semua Jenis Kelamin</option>
+                                <option value="P">Perempuan</option>
+                                <option value="L">Laki-laki</option>
+                            </select>
+                        </div>
                     </div>
                     <div class="card-body">
                         <table id="datatable" class="table table-bordered table-striped">
@@ -26,7 +36,6 @@
                                     <th class="text-center">Phone Number</th>
                                     <th class="text-center">Email</th>
                                     <th class="text-center">Address</th>
-                                    <th class="text-center">Created at</th>
                                     <th class="text-center">Action</th>
                                 </tr>
                             </thead>
@@ -51,7 +60,7 @@
                                             <label for="name">Name</label>
                                             <input type="text" name="name" class="form-control"
                                                 placeholder="Enter Name" :value="data.name" required="">
-                                            <label for="name">Name</label>
+                                            <label for="name">Gender</label>
                                             <input type="text" name="gender" class="form-control"
                                                 placeholder="Enter Name" :value="data.gender" required="">
                                             <label for="phone_number">Phone Number</label>
@@ -128,11 +137,6 @@
                 orderable: true
             },
             {
-                data: 'date',
-                class: 'text-center',
-                orderable: true
-            },
-            {
                 render: function(index, row, data, meta) {
                     return `
                 <a href="#" class="btn btn-sm btn-warning" onclick="controller.editData(event, ${meta.row})">Edit</a>
@@ -146,4 +150,14 @@
         ];
     </script>
     <script src="{{ asset('js/data.js') }}"></script>
+    <script type="text/javascript">
+        $('select[name=gender]').on('change', function(){
+            gender = $('select[name=gender]').val();
+            if (gender == 0) {
+                controller.table.ajax.url(actionUrl).load();
+            } else{
+                controller.table.ajax.url(actionUrl +'?gender='+ gender).load();
+            }
+        })
+    </script>
 @endSection

@@ -17,7 +17,7 @@ class MemberSeeder extends Seeder
         for ($i=0; $i < 20; $i++) {
             $member = new Member;
             $member->name = $faker->name;
-            $member->gender = rand(1,2);
+            $member->gender = rand(0, 1) ? 'P' : 'L';
             $member->phone_number ='0812'.$faker->randomNumber(8);
             $member->address = $faker->address;
             $member->email = $faker->email;

@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Models\Member;
+use App\Models\Transaction;
 use Illuminate\Http\Request;
 
 class Membercontroller extends Controller
@@ -14,8 +15,18 @@ class Membercontroller extends Controller
     /**
      * Display a listing of the resource.
      */
-    public function index()
+    public function index(Request $request)
     {
+        if ($request->ajax()) {
+            if ($request->gender) {
+                $datas = Member::where('gender', $request->gender)->get();
+            } else {
+                $datas = Member::all();
+            }
+    
+            $datatables = datatables()->of($datas)->addIndexColumn();
+            return $datatables->make(true);
+        }
         return view('admin.member.index');
     }
 

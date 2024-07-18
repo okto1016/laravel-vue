@@ -21,8 +21,13 @@ class Book extends Model
     {
         return $this->belongsTo('App\Models\Author', 'author_id');
     }
-    public function transactiondetail()
+    public function transactions()
     {
-        return $this->hasOne('App\Models\TransactionDetail', 'book_id');
+        return $this->hasManyThrough(Transaction::class, TransactionDetail::class, 'book_id', 'id', 'id', 'transaction_id');
+    }
+
+    public function details()
+    {
+        return $this->hasMany(TransactionDetail::class);
     }
 }
